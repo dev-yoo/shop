@@ -1,0 +1,8 @@
+spring:
+  profiles:
+    active: dev
+  datasource:
+    driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+    url: jdbc:log4jdbc:mysql://172.28.208.213:3306/shop?autoReconnect=true
+    username: dsyoo
+    password: dsyoo123

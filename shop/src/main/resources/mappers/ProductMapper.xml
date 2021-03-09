@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Goods">
+
+  <select id="selectGoodsList" parameterType="com.shop.dto.GoodsDto" resultType="com.shop.vo.GoodsVo">
+  <!-- selectUsers()메서드를 호출하면 실행할 SELECT문이며, 
+							UserDTO 객체를 파라미터로 받아, UserDTO객체를 반환합니다.-->
+	  	SELECT SLITM_CD AS id
+	  	          , SLITM_NM AS name
+	  	          , BRND_NM AS brand
+	  	          , LMSCAT AS category
+	  	 FROM SHOP_MALL
+	  	 WHERE SLITM_NM LIKE  CONCAT(#{searchWord}, '%') 
+	  	 ORDER BY BRND_NM
+	  	 LIMIT 1, 10
+  </select>
+  
+</mapper>
